@@ -1,0 +1,34 @@
+package Lesson5_HW5;
+
+public class EmployeeTest {
+    public static void main(String[] args) {
+        Employee employee1 = new Employee();
+        Employee employee2 = new Employee();
+        //Employee employee3 = new Employee();
+        //Employee employee4 = new Employee(); // не гут! Переписать в МАССИВЫ!!!
+        employee1.name = "LAG";
+        employee1.position = "Economist";
+        employee1.email = "LAG@mail.ru";
+        employee1.telephone = "912 345 67 89";
+        employee1.salary = 85000;
+        employee1.age = 37;
+        employee2.name = "BMV";
+        employee2.position = "HR employee";
+        employee2.email = "BMV@mail.ru";
+        employee2.telephone = "923 456 78 90";
+        employee2.salary = 65000;
+        employee2.age = 31;
+        System.out.println("Сотрудгик 1: " + employee1.name  + ", " + employee1.position + ", " + employee1.telephone + ", " + employee1.salary + ", " + employee1.age+ ".");
+        System.out.println("Сотрудгик 2: " + employee2.name + " в должности " + employee2.position + " телефон " + employee2.telephone);
+
+    }
+
+
+}
+/* private String name;
+    private String position;
+    private String email;
+    private String telephone;
+    private int salary;
+    private int age;
+    */
