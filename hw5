@@ -1,34 +1,18 @@
 package Lesson5_HW5;
 
-public class EmployeeTest {
+public class PersonTest {
     public static void main(String[] args) {
-        Employee employee1 = new Employee();
-        Employee employee2 = new Employee();
-        //Employee employee3 = new Employee();
-        //Employee employee4 = new Employee(); // не гут! Переписать в МАССИВЫ!!!
-        employee1.name = "LAG";
-        employee1.position = "Economist";
-        employee1.email = "LAG@mail.ru";
-        employee1.telephone = "912 345 67 89";
-        employee1.salary = 85000;
-        employee1.age = 37;
-        employee2.name = "BMV";
-        employee2.position = "HR employee";
-        employee2.email = "BMV@mail.ru";
-        employee2.telephone = "923 456 78 90";
-        employee2.salary = 65000;
-        employee2.age = 31;
-        System.out.println("Сотрудгик 1: " + employee1.name  + ", " + employee1.position + ", " + employee1.telephone + ", " + employee1.salary + ", " + employee1.age+ ".");
-        System.out.println("Сотрудгик 2: " + employee2.name + " в должности " + employee2.position + " телефон " + employee2.telephone);
+        Person[] persArray = new Person[5];
+        persArray[0] = new Person("Иванов Иван, ", "Начальник Тех. отдела, ", "IvanIvan@person.ru, ", "8(912)3456789, ", 50000, 42);
+        persArray[1] = new Person("Петров Петр, ", "Менеджер, ", "PetrovPetr@person.ru, ", "8(912)3456789, ", 35000, 33);
+        persArray[2] = new Person("Сидоров Даниил, ", "Эксперт, ", "SidorovDaniil@person.ru, ", "8(912)3456789 ", 35000, 40);
+        persArray[3] = new Person("Попов Алексей, ", "Специалист, ", "PopovAlex@person.ru, ", "8(912)3456789 ", 30000, 37);
+        persArray[4] = new Person("Корнеев Дмитрий, ", "Мастер наладчик, ", "KornDmitr@person.ru, ", "8(912)3456789, ", 30000, 56);
 
+        for (Person person : persArray){
+            if (person.getAge() >= 40) {
+                System.out.println(person);
+            }
+        }
     }
-
-
 }
-/* private String name;
-    private String position;
-    private String email;
-    private String telephone;
-    private int salary;
-    private int age;
-    */
