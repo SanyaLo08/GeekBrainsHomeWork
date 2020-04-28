@@ -1,58 +1,80 @@
-public class homeWork2 {
-    public static void main(String[] args) {
-        //1. Задать целочисленный массив, состоящий из элементов 0 и 1.
-        System.out.println("\r\nTask - 1");
-        System.out.println("Было - 1, 1, 0, 0, 1, 0, 1, 1, 0, 0");
-        int[] lag1 = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
-            for (int i = 0; i < lag1.length; i++) {
-                lag1[i] = lag1[i] == 1 ? 0 : 1;
-            System.out.print(" Стало " + lag1[i]);
-        }
+public class HomeWork2 {
 
-        //2. Задать пустой целочисленный массив размером 8. С помощью цикла заполнить его значениями 0 3 6 9 12 15 18 21;
-        System.out.println("\r\n\nTask - 2");
-            int[] lag2 = new int[8];
-                for (int i = 1, j = 0; i < lag2.length; i++) lag2[i] = j += 3;
-                for (int x : lag2) System.out.print(x + " ");
-
-        //3. Задать массив [ 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 ] пройти по нему циклом, и числа меньшие 6 умножить на 2;
-        System.out.println("\r\n\nTask - 3");
-        System.out.println("Было - 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1");
-        int[] lag3 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
-            for (int i = 0; i < lag3.length; i++) {
-                if (lag3[i] < 6) lag3[i] *= 2;
-                System.out.print(lag3[i] + " ");
-        }
-
-        //4. Создать квадратный двумерный целочисленный массив, и с помощью цикла(-ов) заполнить его диагональные элементы единицами;
-        System.out.println("\r\n\nTask - 4");
-        int[][] lag4 = new int[5][5];
-            for (int a = 0; a < lag4.length; a++) {
-                for (int b = 0, b2 = lag4[a].length; b < lag4[a].length; b++, b2--) {
-                    if (a == b || a == (b2 - 1)) lag4[a][b] = 1;
-                System.out.print(lag4[a][b] + " ");
-            }
-                System.out.print("\r\n");
-        }
-
-        //5. ** Задать одномерный массив и найти в нем минимальный и максимальный элементы (без помощи интернета);
-        System.out.println("\r\n\nTask - 5");
-        System.out.println("Элементы - 10, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1");
-        int[] lag5 = {10, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
-        int min = lag5[0], max = lag5[0], indMax = 0, indMin = 0;
-            for (int i = 0; i < lag5.length; i++) {
-                if (lag5[i] > max) {
-                max = lag5[i];
-                indMax = i;
-            }
-                if (lag5[i] < min) {
-                min = lag5[i];
-                indMin = i;
-            }
-        }
-        System.out.println("Максимальное значение " + max);
-        System.out.println("Минимальное значение  " + min);
-        System.out.println("P/S - Всё же немного подглядел из старых уроков :( Pido perdón.");
+    public static void main(String[] args) { // 1.1
+        doOne(); // 1.2
+        System.out.println("a * (b + (c / d)) = " + doTwo(3,6,9,12)); // 1.3
+        System.out.println(doThree(7, 10)); // 1.4
+        doFour(-7); // 1.5
+        System.out.println(doFive(-7)); // 1.6
+        doSix("Студенты"); // 1.7
+        doSeven(2020); // 1.8
     }
 
+    //1.2 - Создать переменные всех пройденных типов данных, и инициализировать их значения;
+    static void doOne() {
+        System.out.println("Задание 1.2 ");
+        byte b = 10;
+        short s = 2404;
+        int i = 123456;
+        long l = 1500L; // для переменной long в конце ставится буква L
+        float f = 120.0f; // для переменной float в конце ставится буква f
+        double d = 15.72775;
+        boolean bool = true;
+        String hl = "Hello, Alex!";
+        char c = 'A';
+
+        System.out.println(b);
+        System.out.println(s);
+        System.out.println(i);
+        System.out.println(l);
+        System.out.println(f);
+        System.out.println(d);
+        System.out.println(bool);
+        System.out.println(hl);
+        System.out.println(c);
+    }
+
+    //1.3 - Написать метод вычисляющий выражение a * (b + (c / d)) и возвращающий результат, где a, b, c, d – входные параметры этого метода;
+    static double doTwo(double a, double b, double c, double d) {
+        System.out.println("\nЗадание 1.3 ");
+        return a * (b + (c / d));
+    }
+
+    //1.4 - Написать метод, принимающий на вход два числа, и проверяющий что их сумма лежит в пределах от 10 до 20(включительно), если да – вернуть true, в противном случае – false;
+    static boolean doThree(int a, int b) {
+        System.out.println("\nЗадание 1.4");
+        int sum = a + b;
+        if (sum > 10 && sum < 20) return true;
+        else return false;
+    }
+
+    //1.5 - Написать метод, которому в качестве параметра передается целое число, метод должен напечатать в консоль положительное ли число передали, или отрицательное; Замечание: ноль
+    //считаем положительным числом.
+    static void doFour(int a) {
+        System.out.println("\nЗадание 1.5 ");
+        if (a >= 0) System.out.println("Число " + a + "положительное");
+        else System.out.println("Число " + a + " отрицательное");
+    }
+
+    // 1.6 - Написать метод, которому в качестве параметра передается целое число, метод должен вернуть true, если число отрицательное;
+    static boolean doFive(int a) {
+        System.out.println("\nЗадание 1.6");
+        if (a < 0) return true;
+        return false;
+    }
+
+    // 1.7 - Написать метод, которому в качестве параметра передается строка, обозначающая имя, метод должен вывести в консоль сообщение «Привет, указанное_имя!»;
+    static void doSix(String name) {
+        System.out.println("\nЗадание 1.7");
+        System.out.println("Привет, " + name + "!");
+    }
+
+    // 1.8 - * Написать метод, который определяет является ли год високосным, и выводит сообщение в консоль. Каждый 4-й год является високосным, кроме каждого 100-го, при этом каждый 400-й
+    //– високосный.
+    static void doSeven(int year) {
+        System.out.println("\nЗадание 1.8");
+        if (!(year % 4 == 0) || ((year % 100 == 0) && !(year % 400 == 0)))
+            System.out.println(year + " год не високосный");
+        else System.out.println(year + " год високосный, будь он не ладен :( ");
+    }
 }
